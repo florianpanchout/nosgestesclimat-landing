@@ -5,13 +5,13 @@ export const themes = {
   default: {
     name: 'Clair',
     colors: {
-      main: '#26827C',
-      mainLight: '#DFECEB',
+      main: '#32337B',
+      mainLight: '#3696E0',
       mainDark: '#1D625E',
       second: '#EFF4F9',
       secondDark: '#B1D4F6',
       background: '#ffffff',
-      text: '#383838',
+      text: '#32337B',
       textLight: '#FBFBFC',
       error: '#ce0500',
       errorLight: '#ffdddd',
@@ -87,44 +87,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     position: relative;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    font-family: ${(props) => props.theme.fonts.title};
-    font-weight: bold;
-    line-height: 1.2;
-  }
-
-  h1 {
-    font-size: 2.25rem;
-
-    ${(props) => props.theme.mq.medium} {
-      font-size: 2rem;
-    }
-    ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
-    }
-  }
-  
-  h2 {
-    font-size: 2rem;
-
-     ${(props) => props.theme.mq.medium} {
-      font-size: 1.75rem;
-    }
-
-    ${(props) => props.theme.mq.small} {
-      font-size: 1.375rem;
-    }
-  }
-
-  h3 {
-    font-size: 1.375rem;
-
-    ${(props) => props.theme.mq.small} {
-      font-size: 1.125rem;
-    }
-  }
 
   a {
     color: ${(props) => props.theme.colors.main};
@@ -132,14 +94,5 @@ export const GlobalStyle = createGlobalStyle`
 
   option {
     color: #383838;
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type=number] {
-    -moz-appearance: textfield;
   }
 `

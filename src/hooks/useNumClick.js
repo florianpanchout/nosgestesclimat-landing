@@ -8,11 +8,13 @@ export default function useNumClick() {
       axios
         .get(`/.netlify/functions/callBrevo`)
         .then(
-          (res) =>
-            res.statistics.linksStats['https://ecolab.ademe.fr/transport']
+          ({ data }) =>
+            data.statistics.linksStats['https://ecolab.ademe.fr/impactcarbone']
         ),
     {
       keepPreviousData: true,
+      refetchOnWindowFocus: false,
+      staleTime: Infinity,
     }
   )
 }
