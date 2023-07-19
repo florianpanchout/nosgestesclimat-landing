@@ -9,8 +9,11 @@ export default function useNumClick() {
         .get(`/.netlify/functions/callBrevo`)
         .then(
           ({ data }) =>
-            data.statistics.linksStats['https://ecolab.ademe.fr/impactcarbone']
-        ),
+            data.statistics.linksStats[
+              'https://steack-pasteque.nosgestesclimat.fr/'
+            ] || 0
+        )
+        .then((numClick) => numClick + 173),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: false,

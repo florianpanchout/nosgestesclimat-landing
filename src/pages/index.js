@@ -7,7 +7,7 @@ import AnimatedNumber from 'animated-number-react'
 import useNumClick from '@/hooks/useNumClick'
 
 const Wrapper = styled.div`
-  max-width: 44rem;
+  max-width: 45rem;
   margin: 2rem auto;
   padding: 0 1rem;
 `
@@ -40,14 +40,25 @@ const Separator = styled.div`
   margin-bottom: 1rem;
   background-color: ${(props) => props.theme.colors.mainLight};
 `
-const BigText = styled.p`
+const Text = styled.p`
   font-size: 1.5rem;
 `
-const Color = styled.span`
-  color: ${(props) => props.theme.colors.main};
+const Center = styled.p`
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    min-width: 6rem;
+    text-align: right;
+  }
 `
+
 export default function Home() {
-  const kgCo2ePerClick = 14
+  const kgCo2ePerClick = 12
   const { data: numClick } = useNumClick()
 
   return (
@@ -67,7 +78,7 @@ export default function Home() {
             src='/logo.png'
             width={100}
             height={100}
-            alt='Picture of the author'
+            alt='Nos Gestes Climat'
           />
           <Logo>
             Nos
@@ -77,20 +88,28 @@ export default function Home() {
             Climat
           </Logo>
         </Header>
-        <Title>Félicitation !</Title>
+        <Title>Merci et bravo pour votre engagement&#8239;!</Title>
         <Separator />
-        <BigText>
-          <Color>
-            Vous êtes maintenant {numClick} à participer au challenge !
-          </Color>
-          <br />
-          Soit{' '}
+        <Text>
+          Vous êtes maintenant <strong>{numClick}</strong> à participer à notre{' '}
+          <strong>Défi Climat de l'été</strong>, ce qui fait grimper le compteur
+          :<br />
+        </Text>
+        <Center>
           <AnimatedNumber
             value={numClick * kgCo2ePerClick}
             formatValue={(value) => Math.round(value)}
           />{' '}
-          kg CO2e évités cet été !
-        </BigText>
+          kg CO2e évités grâce à vous&#8239;!
+        </Center>
+        <Image
+          src={'/bunny.gif'}
+          layout={'responsive'}
+          height={175}
+          width={175}
+          alt={`Lapinou`}
+          unoptimized={true}
+        />
       </Wrapper>
     </>
   )
