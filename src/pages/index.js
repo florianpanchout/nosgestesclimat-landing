@@ -8,9 +8,9 @@ import useNumClick from '@/hooks/useNumClick'
 
 const Wrapper = styled.div`
   max-width: 44rem;
-  margin: 0 auto;
+  margin: 2rem auto;
 `
-const Header = styled.div`
+const Header = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,9 +19,9 @@ const Header = styled.div`
 `
 const Logo = styled.div`
   font-weight: 900;
-  line-height: 1.5rem;
+  line-height: 1;
   text-transform: uppercase;
-  font-size: 160%;
+  font-size: 1.75rem;
   margin-left: 0.2rem;
 `
 const Title = styled.h1`
@@ -58,11 +58,11 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Wrapper>
-        <Header>
+        <Header href='https://nosgestesclimat.fr/'>
           <Image
             src='/logo.png'
-            width={75}
-            height={75}
+            width={100}
+            height={100}
             alt='Picture of the author'
           />
           <Logo>
@@ -84,7 +84,7 @@ export default function Home() {
           <AnimatedNumber
             value={numClick * kgCo2ePerClick}
             formatValue={(value) => Math.round(value)}
-          />
+          />{' '}
           kg CO2e évités cet été !
         </BigText>
       </Wrapper>
