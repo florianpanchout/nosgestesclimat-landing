@@ -100,7 +100,7 @@ export default function Home() {
             value={numClick * kgCo2ePerClick}
             formatValue={(value) => Math.round(value)}
           />{' '}
-          kg CO2e évités grâce à vous&#8239;!
+          kg CO<sub>2</sub>e évités grâce à vous&#8239;!
         </Center>
         <Image
           src={'/bunny.gif'}
