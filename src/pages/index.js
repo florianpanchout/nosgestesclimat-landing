@@ -92,8 +92,8 @@ export default function Home() {
         <Separator />
         <Text>
           Vous êtes maintenant <strong>{numClick}</strong> à participer à notre{' '}
-          <strong>Défi Climat de l'été</strong>, ce qui fait grimper le compteur
-          :<br />
+          <strong>Défi Climat de l&apos;été</strong>, ce qui fait grimper le
+          compteur :<br />
         </Text>
         <Center>
           <AnimatedNumber
