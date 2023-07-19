@@ -9,6 +9,7 @@ import useNumClick from '@/hooks/useNumClick'
 const Wrapper = styled.div`
   max-width: 44rem;
   margin: 2rem auto;
+  padding: 0 1rem;
 `
 const Header = styled.a`
   display: flex;
