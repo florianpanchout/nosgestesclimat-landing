@@ -5,14 +5,14 @@ export const themes = {
   default: {
     name: 'Clair',
     colors: {
-      main: '#32337B',
+      main: '#5758BB',
       mainLight: '#3696E0',
       mainDark: '#1D625E',
       second: '#EFF4F9',
       secondDark: '#B1D4F6',
       background: '#ffffff',
       text: '#32337B',
-      textLight: '#FBFBFC',
+      textLight: '#f8f8f7',
       error: '#ce0500',
       errorLight: '#ffdddd',
       warning: '#fc5d00',

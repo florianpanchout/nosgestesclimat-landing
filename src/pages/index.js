@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-
+import copy from 'copy-to-clipboard'
 import styled from 'styled-components'
 import AnimatedNumber from 'animated-number-react'
 
 import useNumClick from '@/hooks/useNumClick'
+import Button from '@/components/Button'
 
 const Wrapper = styled.div`
   max-width: 45rem;
@@ -34,6 +36,10 @@ const Title = styled.h1`
   line-height: 1.2;
   color: ${(props) => props.theme.colors.main};
 `
+const Subtitle = styled.h2`
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+`
 const Separator = styled.div`
   width: 3rem;
   height: 3px;
@@ -56,10 +62,20 @@ const Center = styled.p`
     text-align: right;
   }
 `
-
+const GifWrapper = styled.div`
+  margin-bottom: 3rem;
+  border-radius: 0.375rem;
+`
+const Share = styled.div`
+  padding: 1rem;
+  background-color: ${(props) => props.theme.colors.textLight};
+  border-radius: 0.375rem;
+`
 export default function Home() {
   const kgCo2ePerClick = 12
   const { data: numClick } = useNumClick()
+
+  const [copied, setCopied] = useState(false)
 
   return (
     <>
@@ -93,23 +109,48 @@ export default function Home() {
         <Text>
           Vous êtes maintenant <strong>{numClick}</strong> à participer à notre{' '}
           <strong>Défi Climat de l&apos;été</strong>, ce qui fait grimper le
-          compteur :<br />
+          compteur&#8239;:
+          <br />
         </Text>
         <Center>
           <AnimatedNumber
             value={numClick * kgCo2ePerClick}
             formatValue={(value) => Math.round(value)}
-          />{' '}
-          kg CO<sub>2</sub>e évités grâce à vous&#8239;!
+          />
+          &nbsp; kg&nbsp;CO<sub>2</sub>e évités grâce à vous&#8239;!
         </Center>
-        <Image
-          src={'/bunny.gif'}
-          layout={'responsive'}
-          height={175}
-          width={175}
-          alt={`Lapinou`}
-          unoptimized={true}
-        />
+        <GifWrapper>
+          <Image
+            src={'/bunny.gif'}
+            layout={'responsive'}
+            height={175}
+            width={175}
+            alt={`Lapinou`}
+            unoptimized={true}
+          />
+        </GifWrapper>
+        <Share>
+          <Subtitle>
+            Pour aller plus loin partage Nos Gestes Climat à tes amis
+          </Subtitle>
+          <Button
+            onClick={() => {
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Lien landing newsletter copié',
+                equivalent.slug,
+              ])
+              if (
+                copy('https://nosgestesclimat.fr/?mtm_campaign=steack-pasteque')
+              ) {
+                setCopied(true)
+              }
+            }}
+          >
+            {copied ? <>Copié !</> : <>Copier le lien</>}
+          </Button>
+        </Share>
       </Wrapper>
     </>
   )

@@ -9,11 +9,12 @@ export default function useNumClick() {
         .get(`/.netlify/functions/callBrevo`)
         .then(
           ({ data }) =>
-            data.statistics.linksStats[
+            data?.statistics?.linksStats[
               'https://steack-pasteque.nosgestesclimat.fr/'
             ] || 0
         )
-        .then((numClick) => numClick + 173),
+        .then((numClick) => numClick + 173)
+        .catch((err) => 173),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: false,
