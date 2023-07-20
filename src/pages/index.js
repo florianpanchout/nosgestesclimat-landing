@@ -117,7 +117,7 @@ export default function Home() {
             value={numClick * kgCo2ePerClick}
             formatValue={(value) => Math.round(value)}
           />
-          &nbsp; kg&nbsp;CO<sub>2</sub>e évités grâce à vous&#8239;!
+          &nbsp;kg&nbsp;CO<sub>2</sub>e évités grâce à vous&#8239;!
         </Center>
         <GifWrapper>
           <Image
