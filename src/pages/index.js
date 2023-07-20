@@ -139,7 +139,6 @@ export default function Home() {
                 'trackEvent',
                 'Interaction',
                 'Lien landing newsletter copié',
-                equivalent.slug,
               ])
               if (
                 copy('https://nosgestesclimat.fr/?mtm_campaign=steack-pasteque')
