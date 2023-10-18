@@ -72,7 +72,7 @@ const Share = styled.div`
   border-radius: 0.375rem;
 `
 export default function Home() {
-  const kgCo2ePerClick = 12
+  const kgCo2ePerClick = 20
   const { data: numClick } = useNumClick()
 
   const [copied, setCopied] = useState(false)
@@ -108,7 +108,7 @@ export default function Home() {
         <Separator />
         <Text>
           Vous êtes maintenant <strong>{numClick}</strong> à participer à notre{' '}
-          <strong>Défi Climat de l&apos;été</strong>, ce qui fait grimper le
+          <strong>Défi Climat de l&apos;automne</strong>, ce qui fait grimper le
           compteur&#8239;:
           <br />
         </Text>
@@ -121,11 +121,11 @@ export default function Home() {
         </Center>
         <GifWrapper>
           <Image
-            src={'/bunny.gif'}
+            src={'/bike.gif'}
             layout={'responsive'}
             height={175}
             width={175}
-            alt={`Lapinou`}
+            alt={`Vélo`}
             unoptimized={true}
           />
         </GifWrapper>

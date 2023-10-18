@@ -1,6 +1,7 @@
 const axios = require('axios')
 
-exports.handler = function () {
+exports.handler = function (event) {
+  console.log(event)
   return axios
     .get('https://api.brevo.com/v3/emailCampaigns/61?statistics=linksStats', {
       method: 'GET',
