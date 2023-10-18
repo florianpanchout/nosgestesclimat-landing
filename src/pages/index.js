@@ -80,10 +80,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Troque ton steak 🥩 pour une pastèque 🍉</title>
+        <title>Après les claquettes, vive la bicyclette 🚴🏽‍♀️</title>
         <meta
           name='description'
-          content='On vous met au défi ce mois-ci de changer vos projets viande grillée en projets légumes marinés… Prêt.e.s à relever le défi de transformer a minima 3 barbecues de l’été en repas végétariens ?'
+          content="L'arrivée de l'automne, c’est l’occasion de (re)prendre des bonnes habitudes. Cette année, on vous propose de rester en forme avec notre défi du mois : doubler le nombre de kilomètres parcourus à vélo !"
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.png' />
