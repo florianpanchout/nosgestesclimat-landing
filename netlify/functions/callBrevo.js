@@ -3,7 +3,7 @@ const axios = require('axios')
 exports.handler = function (event) {
   console.log(event)
   return axios
-    .get('https://api.brevo.com/v3/emailCampaigns/61?statistics=linksStats', {
+    .get('https://api.brevo.com/v3/emailCampaigns/63?statistics=linksStats', {
       method: 'GET',
       headers: {
         accept: 'application/json',
