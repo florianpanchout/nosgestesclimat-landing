@@ -10,7 +10,7 @@ export default function useNumClick() {
         .then(
           ({ data }) =>
             data?.statistics?.linksStats[
-              'https://claquettes-bicylette.nosgestesclimat.fr//'
+              'https://claquettes-bicylette.nosgestesclimat.fr/'
             ] || 0
         )
         .then((numClick) => numClick + 173)
